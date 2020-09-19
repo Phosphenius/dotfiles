@@ -27,6 +27,10 @@ PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\
 # source local .bashrc for custom settings
 [[ -f .bashrc.local ]] && source .bashrc.local
 
+# source fzf config
+[[ -f /usr/share/fzf/key-bindings.bash ]] && source /usr/share/fzf/key-bindings.bash
+[[ -f /usr/share/fzf/completion.bash ]] && source /usr/share/fzf/completion.bash
+
 currentDir=$(pwd)
 if [ -f /usr/lib/bash-git-prompt/gitprompt.sh ] && [ ! $currentDir == /run* ];
 then
