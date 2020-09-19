@@ -11,6 +11,4 @@ ENV HOME /home/archuser
 
 RUN chown -R archuser:archuser $HOME
 
-RUN mkdir -p $HOME/.vim/bundle/
-RUN git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 USER archuser
