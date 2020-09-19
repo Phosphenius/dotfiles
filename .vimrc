@@ -71,7 +71,7 @@ set incsearch
 set background=dark
 set ttimeoutlen=25
 "set spelllang=en,de
-set spell
+"set spell
 set splitbelow splitright
 
 set noswapfile
