@@ -17,6 +17,7 @@ Plug 'airblade/vim-gitgutter'
 
 "editing
 Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
 
 "file types & syntax
 Plug 'elmar-hinz/vim.typoscript'
@@ -98,26 +99,74 @@ au BufEnter,FocusGained,InsertLeave * set rnu
 
 autocmd FileType c,cpp setlocal equalprg=clang-format | set fdm=syntax
 
-map <C-n> :NERDTreeToggle<CR>
+" toggle NERD tree file explorer
+"map <C-n> :NERDTreeToggle<CR>
+map <C-n> :call ToggleNERDTree()<CR>
+
+" FZF
+map <C-p> :Files!<CR>
+
+" use space as leader
 map <space> \
+
+" yank from cursor to end of line
 map Y y$
+
+" tab navigation via <TAB> key
 nnoremap <TAB> gt
 nnoremap <leader><TAB> gT
+
+" insert empty line above/below
 nnoremap <leader>n :norm mxo<ESC>`x
 nnoremap <leader>p :norm mxO<ESC>`x
-map <leader>c :pyf /usr/share/clang/clang-format.py<cr>
-nnoremap <leader>l :ls<CR>:b<space>
-nnoremap <leader>f :find *
-nnoremap <leader>s :sfind *
-nnoremap <leader>v :vert sfind *
-nnoremap <leader>t :tabfind *
+
+map <leader>x :call FormatFile()<CR>
+
+function! ToggleNERDTree()
+  NERDTreeToggle
+  " Set NERDTree instances to be mirrored
+  silent NERDTreeMirror
+endfunction
+
+function FormatFile()
+  let l:lines="all"
+  pyf /usr/share/clang/clang-format.py
+endfunction
+
+" Bind "//" to a fzf-powered buffer search
+nmap // :BLines!<CR>
+
+" Bind "??" to a fzf-powered project search
+nmap ?? :Rg!<CR>
+
+" toggle tagbar
+nnoremap <leader>o :TagbarToggle<CR>
+
+" fzf project files
+nnoremap <leader>f :GFiles!<CR>
+
+" fzf history
+nnoremap <leader>b :History:<CR>
+
+" fzf commands
+nnoremap <leader>c :Commands<CR>
+
+" fzf open buffers
+nnoremap <leader>l :Buffers!<CR>
+
+" disable highlighting
 nnoremap <leader>h :noh<CR>
+
+" write file
 nnoremap <leader>w :w<CR>
+
+" write session (probably don't really need that)
 nnoremap <leader>z :mks!<CR>
+
+" run make
 nnoremap <leader>m :make -j5<CR><CR>
-nnoremap <leader>r :! $(find . -maxdepth 1 -executable -type f)<CR><CR>
-nnoremap <leader>d :! gdb $(find . -maxdepth 1 -executable -type f)<CR><CR>
-nnoremap <leader>o :make -j5<CR><CR> : ! $(find . -maxdepth 1 -executable -type f)<CR><CR>
+
+" some mappings for common git commands
 nnoremap <leader>gl :! git log %:p<CR>
 nnoremap <leader>gh :! git log -p %:p<CR>
 nnoremap <leader>gd :! git diff %:p<CR>
@@ -125,15 +174,24 @@ nnoremap <leader>ga :! git add %:p<CR><CR>
 nnoremap <leader>gr :! git restore %:p<CR><CR>
 nnoremap <leader>gc :! git restore --staged %:p<CR><CR>
 nnoremap <leader>gg :! git commit<CR>
+
+" replace word under cursor
+nmap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
+
+" faster window navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" map jj to esc 
 inoremap jj <ESC>
 
+"disable arrow keys
 noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
 
-command Insvd :normal i \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump(, __FILE__ . ':' . __LINE__);<ESC>T(i
+"insert TYPO3 var_dump function
+command InsertT3Debug :normal i \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump(, __FILE__ . ':' . __LINE__);<ESC>T(i
