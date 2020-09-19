@@ -33,6 +33,7 @@ call plug#end()
 filetype plugin indent on
 
 syntax on
+set showcmd
 set shortmess-=S
 set updatetime=500 "refresh every 500ms
 set encoding=utf-8
