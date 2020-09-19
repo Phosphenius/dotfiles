@@ -1,0 +1,12 @@
+set nocompatible "always run in nocompatible mode
+
+syntax enable "enable syntax highlighting
+filetype plugin on "detect file types 
+
+set number "enable line numbers
+set encoding=utf-8 "set encoding to UTF-8
+
+"Terminal options
+t_Co=256 "256 colors
+
+

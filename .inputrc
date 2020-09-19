@@ -1,0 +1,49 @@
+$include /etc/inputrc
+
+set show-all-if-unmodified on
+set keyseq-timeout 25
+set echo-control-characters Off
+
+# enable vi mode
+set editing-mode vi
+# show the current mode of vi in the prompt
+set show-mode-in-prompt on
+# set vi-ins-mode-string \1\e[6 q\2
+# set vi-cmd-mode-string \1\e[2 q\2
+set vi-ins-mode-string +
+set vi-cmd-mode-string :
+
+$if mode=vi
+
+set keymap vi-command
+
+# these are for vi-command mode
+j: history-search-forward
+k: history-search-backward
+Control-l: clear-screen
+
+set keymap vi-insert
+
+# these are for vi-insert mode
+Control-p: previous-history
+Control-n: next-history
+Control-j: history-search-forward
+Control-k: history-search-backward
+#Control-k: kill-line
+Control-e: end-of-line
+Control-a: beginning-of-line
+Control-l: clear-screen
+
+$endif
+
+# Color files by types
+set colored-stats On
+# Append char to indicate type
+set visible-stats On
+# Mark symlinked directories
+set mark-symlinked-directories On
+# Color the common prefix
+set colored-completion-prefix On
+# Color the common prefix in menu-complete
+set menu-complete-display-prefix On
+
