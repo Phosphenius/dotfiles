@@ -22,7 +22,10 @@ Plug 'tpope/vim-surround'
 "file types & syntax
 Plug 'elmar-hinz/vim.typoscript'
 Plug 'mipmip/vim-fluid'
-Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'posva/vim-vue'
+
+" slow af
+"Plug 'othree/javascript-libraries-syntax.vim'
 
 "cosmetic
 Plug 'vim-airline/vim-airline'
@@ -148,14 +151,14 @@ nnoremap <leader>f :GFiles!<CR>
 " fzf history
 nnoremap <leader>b :History:<CR>
 
-" fzf commands
-nnoremap <leader>c :Commands<CR>
+" fzf git changed files 
+nnoremap <leader>j :GFiles?<CR>
 
 " fzf open buffers
 nnoremap <leader>l :Buffers!<CR>
 
 " disable highlighting
-nnoremap <leader>h :noh<CR>
+nnoremap <leader>k :noh<CR>
 
 " write file
 nnoremap <leader>w :w<CR>
@@ -174,6 +177,8 @@ nnoremap <leader>ga :! git add %:p<CR><CR>
 nnoremap <leader>gr :! git restore %:p<CR><CR>
 nnoremap <leader>gc :! git restore --staged %:p<CR><CR>
 nnoremap <leader>gg :! git commit<CR>
+
+nnoremap <leader>q :conf qa<CR>
 
 " replace word under cursor
 nmap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
