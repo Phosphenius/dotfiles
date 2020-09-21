@@ -4,9 +4,6 @@
 # Large history
 HISTSIZE=1000000
 
-# try to make Ctrl+S usable 
-stty -ixoff -ixon 
-
 # use the ls replacement "lsd"
 alias ls='lsd'
 # alias ls='ls -F --color=auto'
