@@ -31,6 +31,7 @@ Plug 'posva/vim-vue'
 Plug 'vim-airline/vim-airline'
 Plug 'ap/vim-css-color'
 Plug 'xuyuanp/nerdtree-git-plugin'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -72,7 +73,14 @@ set smartcase
 " set smarttab
 set hlsearch
 set incsearch
+
+set termguicolors
+let g:gruvbox_italic=1
+"let g:gruvbox_contrast_dark='hard'
+"let g:gruvbox_contrast_light='hard'
 set background=dark
+
+colorscheme gruvbox
 set ttimeoutlen=25
 "set spelllang=en,de
 "set spell
@@ -189,6 +197,10 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" TODO: Replace with custom toggle function
+noremap <silent> <F3> :set bg=dark<CR>
+noremap <silent> <F4> :set bg=light<CR>
+
 " map jj to esc 
 inoremap jj <ESC>
 
@@ -198,5 +210,28 @@ noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
 
+
 "insert TYPO3 var_dump function
 command InsertT3Debug :normal i \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump(, __FILE__ . ':' . __LINE__);<ESC>T(i
+
+iabbrev t3debug \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump(, __FILE__ . ':' . __LINE__);
+
+iabbrev ccopy Copyright (C) 2020 Luca Kredel
+
+iabbrev gplhead /*
+            \<CR>* <one line to give the program's name and a brief idea of what it does.>
+            \<CR>* Copyright (C) 2020 Luca Kredel
+            \<CR>*
+            \<CR>* This program is free software: you can redistribute it and/or modify
+            \<CR>* it under the terms of the GNU General Public License as published by
+            \<CR>* the Free Software Foundation, either version 3 of the License, or
+            \<CR>* (at your option) any later version.
+            \<CR>*
+            \<CR>* This program is distributed in the hope that it will be useful,
+            \<CR>* but WITHOUT ANY WARRANTY; without even the implied warranty of
+            \<CR>* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+            \<CR>* GNU General Public License for more details.
+            \<CR>*
+            \<CR>* You should have received a copy of the GNU General Public License
+            \<CR>* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+            \<CR>*/
