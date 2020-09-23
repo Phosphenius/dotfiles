@@ -10,6 +10,7 @@ Plug 'editorconfig/editorconfig-vim'
 "navigation, searching, finding
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 "VCS
@@ -122,10 +123,6 @@ map <space> \
 
 " yank from cursor to end of line
 map Y y$
-
-" tab navigation via <TAB> key
-nnoremap <TAB> gt
-nnoremap <leader><TAB> gT
 
 " insert empty line above/below
 nnoremap <leader>n :norm mxo<ESC>`x

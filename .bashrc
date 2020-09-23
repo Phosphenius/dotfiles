@@ -4,10 +4,15 @@
 # Large history
 HISTSIZE=1000000
 
-# use the ls replacement "lsd"
-alias ls='lsd'
-# alias ls='ls -F --color=auto'
-alias ll='ls -laF'
+if command -v lsd &> /dev/null
+then
+    # use the ls replacement "lsd"
+    alias ls='lsd'
+    alias ll='ls -laF'
+else 
+    alias ls='ls -F --color=auto'
+    alias ll='ls -la'
+fi
 
 # dotfile management - see https://news.ycombinator.com/item?id=11070797
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
@@ -26,6 +31,7 @@ PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\
 
 # source fzf config
 [[ -f /usr/share/fzf/key-bindings.bash ]] && source /usr/share/fzf/key-bindings.bash
+[[ -f /usr/share/fzf/shell/key-bindings.bash ]] && source /usr/share/fzf/shell/key-bindings.bash
 [[ -f /usr/share/fzf/completion.bash ]] && source /usr/share/fzf/completion.bash
 
 currentDir=$(pwd)
@@ -42,5 +48,5 @@ then
     source /usr/lib/bash-git-prompt/gitprompt.sh
 fi
 
-
+[[ -f /etc/profile.d/bash_completion.sh ]] && source /etc/profile.d/bash_completion.sh 
 
