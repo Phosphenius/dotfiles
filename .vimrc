@@ -125,8 +125,12 @@ map <space> \
 map Y y$
 
 " insert empty line above/below
-nnoremap <leader>n :norm mxo<ESC>`x
-nnoremap <leader>p :norm mxO<ESC>`x
+"nnoremap <leader>n :norm mxo<ESC>`x
+"nnoremap <leader>p :norm mxO<ESC>`x
+
+
+nnoremap <leader>n m`o<ESC>``
+nnoremap <leader>p m`O<ESC>``
 
 map <leader>x :call FormatFile()<CR>
 
