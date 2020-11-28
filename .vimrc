@@ -34,6 +34,9 @@ Plug 'ap/vim-css-color'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'morhetz/gruvbox'
 
+"debugging
+Plug 'vim-vdebug/vdebug'
+
 call plug#end()
 
 filetype plugin indent on
@@ -199,8 +202,9 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " TODO: Replace with custom toggle function
-noremap <silent> <F3> :set bg=dark<CR>
-noremap <silent> <F4> :set bg=light<CR>
+" Disabled because of collision with vdebug  
+"noremap <silent> <F3> :set bg=dark<CR>
+"noremap <silent> <F4> :set bg=light<CR>
 
 " map jj to esc 
 inoremap jj <ESC>
