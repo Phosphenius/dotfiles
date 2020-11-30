@@ -18,7 +18,8 @@ fi
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 
 # use vim as a pager
-alias less='/usr/share/vim/vim82/macros/less.sh'
+[[ -f /usr/share/vim/vim82/macros/less.sh ]] && alias less='/usr/share/vim/vim82/macros/less.sh'
+[[ -f /usr/local/share/vim/vim82/macros/less.sh ]] && alias less='/usr/local/share/vim/vim82/macros/less.sh'
 
 # curl weather info
 alias wttr='curl wttr.in'
