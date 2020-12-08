@@ -35,7 +35,7 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'morhetz/gruvbox'
 
 "debugging
-Plug 'vim-vdebug/vdebug'
+"Plug 'vim-vdebug/vdebug'
 
 call plug#end()
 
@@ -69,7 +69,7 @@ let g:netrw_banner=0
 let g:netrw_browse_split=4
 let g:netrw_altv=1
 let g:netrw_liststyle=3
-let g:NERDTreeIgnore=['\~$', '\.d', '\.o']
+let g:NERDTreeIgnore=['\~$', '\.o']
 set copyindent
 set showmatch
 set ignorecase
