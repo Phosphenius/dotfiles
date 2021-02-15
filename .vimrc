@@ -149,16 +149,16 @@ function FormatFile()
 endfunction
 
 " Bind "//" to a fzf-powered buffer search
-nmap // :BLines!<CR>
+nmap // :BLines<CR>
 
 " Bind "??" to a fzf-powered project search
-nmap ?? :Rg!<CR>
+nmap ?? :Rg<CR>
 
 " toggle tagbar
 nnoremap <leader>o :TagbarToggle<CR>
 
 " fzf project files
-nnoremap <leader>f :GFiles!<CR>
+nnoremap <leader>f :GFiles<CR>
 
 " fzf history
 nnoremap <leader>b :History:<CR>
@@ -167,7 +167,7 @@ nnoremap <leader>b :History:<CR>
 nnoremap <leader>j :GFiles?<CR>
 
 " fzf open buffers
-nnoremap <leader>l :Buffers!<CR>
+nnoremap <leader>l :Buffers<CR>
 
 " disable highlighting
 nnoremap <leader>k :noh<CR>
