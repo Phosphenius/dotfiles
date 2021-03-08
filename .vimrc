@@ -24,6 +24,7 @@ Plug 'tpope/vim-surround'
 Plug 'elmar-hinz/vim.typoscript'
 Plug 'mipmip/vim-fluid'
 Plug 'posva/vim-vue'
+Plug 'digitaltoad/vim-pug'
 
 " slow af
 "Plug 'othree/javascript-libraries-syntax.vim'
