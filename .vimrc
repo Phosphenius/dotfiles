@@ -31,9 +31,12 @@ Plug 'digitaltoad/vim-pug'
 
 "cosmetic
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'ap/vim-css-color'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 
 "debugging
 "Plug 'vim-vdebug/vdebug'
@@ -80,16 +83,20 @@ set hlsearch
 set incsearch
 
 set termguicolors
-let g:gruvbox_italic=1
+" let g:gruvbox_italic=1
 "let g:gruvbox_contrast_dark='hard'
 "let g:gruvbox_contrast_light='hard'
-set background=dark
+set background=light
 
-colorscheme gruvbox
+" colorscheme gruvbox
+" colorscheme solarized
+colorscheme solarized8
 set ttimeoutlen=25
 "set spelllang=en,de
 "set spell
 set splitbelow splitright
+
+let g:airline_theme='solarized'
 
 set noswapfile
 set nowritebackup
@@ -190,6 +197,7 @@ nnoremap <leader>ga :! git add %:p<CR><CR>
 nnoremap <leader>gr :! git restore %:p<CR><CR>
 nnoremap <leader>gc :! git restore --staged %:p<CR><CR>
 nnoremap <leader>gg :! git commit<CR>
+nnoremap <leader>gb :! git blame %:p<CR><CR>
 
 nnoremap <leader>q :conf qa<CR>
 
