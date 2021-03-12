@@ -127,7 +127,7 @@ autocmd FileType c,cpp setlocal equalprg=clang-format | set fdm=syntax
 map <C-n> :call ToggleNERDTree()<CR>
 
 " FZF
-map <C-p> :Files!<CR>
+map <C-p> :Files<CR>
 
 " use space as leader
 map <space> \
