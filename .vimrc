@@ -90,7 +90,7 @@ set background=light
 
 " colorscheme gruvbox
 " colorscheme solarized
-colorscheme solarized8
+colorscheme solarized8_high
 set ttimeoutlen=25
 "set spelllang=en,de
 "set spell
@@ -181,7 +181,7 @@ nnoremap <leader>l :Buffers<CR>
 nnoremap <leader>k :noh<CR>
 
 " write file
-nnoremap <leader>w :w<CR>
+nnoremap <leader>s :w<CR>
 
 " write session (probably don't really need that)
 nnoremap <leader>z :mks!<CR>
@@ -199,10 +199,10 @@ nnoremap <leader>gc :! git restore --staged %:p<CR><CR>
 nnoremap <leader>gg :! git commit<CR>
 nnoremap <leader>gb :! git blame %:p<CR><CR>
 
-nnoremap <leader>q :conf qa<CR>
+" nnoremap <leader>q :conf qa<CR>
 
 " replace word under cursor
-nmap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
+nmap <leader>q :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 
 " faster window navigation
 nnoremap <C-J> <C-W><C-J>
